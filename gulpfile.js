@@ -48,4 +48,5 @@ gulp.task('watch',() => {
     gulp.watch('./index.html',reload);
 });
 
-gulp.task('default',['styles','js','watch','bs']);
+gulp.task('default',['styles','js','watch','bs'] );
+

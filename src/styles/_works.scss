@@ -1,0 +1,154 @@
+.work .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.workSub {
+    font-family: $bodyFont;
+    color: $grey;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    
+}
+
+.workBlock {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 150px;
+}
+
+.workName {
+    position: absolute;
+}
+
+.workPicture {
+    position: relative;
+}
+
+.workName {
+    font-family: $headerFont;
+    font-size: 1.9rem;
+    font-weight: 200;
+    // border-bottom: 3px solid black;
+    a {
+        color: black;
+        text-decoration: none;
+        
+    }
+    h3 {
+        margin: 0;
+    }
+}
+
+// skills section
+
+.workSkills {
+    font-family: $bodyFont;
+    text-transform: uppercase;
+    color: $grey;
+    font-size: 0.7rem;
+    
+}
+
+
+
+// yogi B section
+
+.yogiB {
+    justify-content: flex-end;
+    .workPicture {
+        width: 65%;
+    }
+    img {
+        border: solid $lightGrey 70px;
+    }
+    .workName {
+        bottom: 80px;
+        left: -305px;
+    }
+    
+}
+
+// havoc of heroes
+
+.havocOfHeroes {
+    justify-content: flex-start;
+    .workPicture {
+        width: 55%;
+    }
+    img {
+        border: solid $lightGrey 60px;
+    }
+    .workName {
+        top: 54px;
+        right: -306px;
+    }
+}
+
+// Word Scramble
+
+.wordScramble {
+    justify-content: flex-end;
+    .workPicture {
+        width: 65%;
+    }
+    img {
+        border: solid $lightGrey 70px;
+    }
+    .workName {
+        bottom: -7px;
+        left: 4px;
+    }
+    .workSkills {
+        transform: rotate(-90deg);
+        position: absolute;
+        bottom: 227px;
+        left:-271px;
+
+    }
+}
+
+
+// Yoga Poses
+
+.yogaPoses {
+    justify-content: flex-start;
+    .workPicture {
+        width: 50%;
+    }
+    img {
+       border: solid $lightGrey 50px; 
+    }
+    .workName {
+        bottom: 56px;
+        right: -206px;
+    }
+    .workSkills {
+        transform: rotate(90deg);
+        position: absolute;
+        bottom: 406px;
+        right:-379px;
+    }
+}
+
+// psd conversion 
+
+.psd {
+    flex-direction: column;
+    align-items: flex-end;
+    .workPicture {
+        width: 60%;
+    }
+    img {
+        border: solid $lightGrey 50px;
+    }
+    .workName {
+        top: 52px;
+        left: -304px;
+    }
+}

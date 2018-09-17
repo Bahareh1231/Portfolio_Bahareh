@@ -1,0 +1,48 @@
+.aboutMe {
+    .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    h2 {
+        margin-bottom: 30px;
+    }
+    .vLine {
+        margin-bottom: 50px;
+        height: 100px;
+    }
+}
+
+.aboutContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.aboutText {
+    width: 45%;
+    p {
+        line-height: 35px;
+        font-family: $bodyFont;
+        font-size: 1.2rem;
+        text-align: left;
+    }
+}
+
+.aboutPicture {
+    width: 40%;
+
+}
+
+// logo section
+
+.skillsIcons {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 3.4rem;
+}
+
+.firebaseLogo {
+    height: 20px;
+    width: auto;
+}

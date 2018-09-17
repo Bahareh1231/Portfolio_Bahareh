@@ -4,7 +4,7 @@ html {
 
 .wrapper {
     max-width: 1500px;
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -17,4 +17,12 @@ h2 {
     font-size: 3rem;
     font-family: $headerFont;
     margin-bottom: 0;
+}
+
+.vLine {
+    width: 50%;
+    border-right: 1px solid $grey;
+    height: 200px;
+    align-self: flex-start;
+    margin-bottom: 150px;
 }
