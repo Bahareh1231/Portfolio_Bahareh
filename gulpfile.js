@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
-const browserSync = require('browser-sync'); 
+const browserSync = require('browser-sync');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
@@ -13,7 +13,7 @@ gulp.task('styles', () => {
         .pipe(sass())
         .pipe(concat('style.css'))
         .pipe(gulp.dest('./public/styles/'))
-        .pipe(reload({stream:true}));
+        .pipe(reload({ stream: true }));
 });
 
 gulp.task('js', () => {
@@ -34,19 +34,18 @@ gulp.task('js', () => {
 });
 
 gulp.task('bs', () => {
-	return browserSync.init({
-		server: {
-			baseDir: './'
-		}
-	});
+    return browserSync.init({
+        server: {
+            baseDir: './'
+        }
+    });
 });
 
-gulp.task('watch',() => {
+gulp.task('watch', () => {
     gulp.watch('./src/**/*.js', ['js']);
     gulp.watch('./src/**/*.scss', ['styles']);
     gulp.watch('./public/styles/style.css', reload);
-    gulp.watch('./index.html',reload);
+    gulp.watch('./index.html', reload);
 });
 
-gulp.task('default',['styles','js','watch','bs'] );
-
+gulp.task('default', ['styles', 'js', 'watch', 'bs']);

@@ -1,0 +1,41 @@
+.blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.blogPicture {
+    width: 40%;
+}
+
+.blogText {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    h3 {
+        font-family: $headerFont;
+        width: 200%;
+        font-size: 1.4rem;
+        position: relative;
+        right: 40%;
+        text-decoration: underline;
+        margin-bottom: 0;
+    }
+    p {
+        font-size: 1rem;
+        font-family: $bodyFont;
+        line-height: 30px;
+
+    }
+}
+
+.blogButton {
+    width: 50%;
+    align-self: center;
+}

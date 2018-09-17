@@ -4,7 +4,7 @@ html {
 
 .wrapper {
     max-width: 1500px;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -16,13 +16,34 @@ img {
 h2 {
     font-size: 3rem;
     font-family: $headerFont;
-    margin-bottom: 0;
+    margin-bottom: 30px;
 }
 
 .vLine {
     width: 50%;
     border-right: 1px solid $grey;
-    height: 200px;
+    height: 100px;
     align-self: flex-start;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
+}
+
+button {
+    font-family: $bodyFont;
+    font-size: 0.7rem;
+    padding: 10px 30px;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid black;
+    text-transform: uppercase;
+    i {
+        margin: 10px;
+    }
+    &:hover {
+        background: black;
+        color: white;
+    }
+    &:active {
+        background: black;
+        color: white;
+    }
+
 }

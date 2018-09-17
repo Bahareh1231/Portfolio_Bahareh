@@ -155,35 +155,30 @@
                         <p class="aboutTextP">I am a Front-End Web Developer based in Toronto. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis similique commodi officia tempore impedit odit eligendi debitis quidem, cupiditate repudiandae. </p>
                         <h3>Skills</h3>
                         <ul class="skillsIcons">
-                            <li>
-                                <i class="devicon-react-original-wordmark colored"></i>
-                                <p class="visuallyhidden">React J S </p></li>
-                            <li>
-                                <i class="devicon-javascript-plain colored"></i>
-                                <p class="visuallyhidden">javaScript</p></li>
-                            <li>
-                                <i class="devicon-jquery-plain colored"></i>
-                                <p class="visuallyhidden">j Query</p></li>
-                            <li>
-                                <i class="devicon-github-plain colored"></i>
-                                <p class="visuallyhidden">Git hub</p></li>
-                            <li>
-                                <img src="./assets/firebase.png" alt="" class="firebaseLogo">
-                                <p class="visuallyhidden">Firebase</p></li>
-                            <li>
-                                <i class="devicon-sass-original colored"></i>
-                                <p class="visuallyhidden">Sass</p></li>
-                            <li>
-                                <i class="devicon-css3-plain colored"></i>
-                                <p class="visuallyhidden">CSS 3</p></li>
-                            <li>
-                                <i class="devicon-html5-plain colored"></i>
-                                <p class="visuallyhidden">HTML 5</p></li>
+                            <div class="topHalf">
+                                <li aria-label="React JS"><i class="devicon-react-original-wordmark colored"></i></li>
+
+                                <li aria-label="javaScript" ><i class="devicon-javascript-plain colored"></i></li>
+
+                                <li aria-label="Jquery" ><i class="devicon-jquery-plain colored"></i></li>
+
+                                <li aria-label="git hub" ><i class="devicon-github-plain colored"></i></li>
+                            </div> <!-- end of top half-->
+                            
+                            <div class="bottomHalf">
+                                <li aria-label="firebase" ><img src="./assets/firebase.png" alt="" class="firebaseLogo"></li>
+
+                                <li aria-label="sass" ><i class="devicon-sass-original colored"></i></li>
+
+                                <li aria-label="css 3" ><i class="devicon-css3-plain colored"></i></li>
+
+                                <li aria-label="html 5" ><i class="devicon-html5-plain colored"></i></li>
+                            </div> <!-- end of bottom half-->
 
                         </ul>
 
                         <div class="resume">
-                            <button class="resumeButton"><i class="fas fa-download"></i>Download Resume</button>
+                            <button class="resumeButton"><i class="fas fa-download"></i>Download CV</button>
                         </div>
                     </div>
 
@@ -198,25 +193,21 @@
         <!-- BLOG SECTION -->
 
         <section class="blog">
+            <h2>My Blog</h2>
+            <div class="vLine"></div>
             <div class="wrapper">
-                <h2>My Blog</h2>
                 <div class="blogPicture">
-                    <img src="" alt="">
-                </div>
-
-                <div class="blogTitle">
-                    <a href="">
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                    </a>
-                </div>
-
+                    <img src="assets/sidecrow1.jpg" alt="Yoga pose in front of a computer">
+                </div> <!-- end of blogPicture-->
+                
                 <div class="blogText">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ducimus omnis unde nobis rem natus saepe soluta dolore ipsa distinctio!</p>
-                </div>
+                    <h3>What yoga taught me about being a web developer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ducimus omnis unde nobis rem natus saepe soluta dolore ipsa distinctio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum harum laborum repellat totam accusantium? Neque harum doloribus autem hic mollitia.</p>
 
-                <div class="readMore">
-                    <button class="blogButton">read more on Medium ...</button>
-                </div>
+                    <button class="blogButton">read more on Medium </button>
+
+                </div> <!-- end of blogText-->
+
             </div><!-- end of wrapper -->
         </section><!-- end of blog section-->
 
@@ -224,45 +215,45 @@
         <!-- CONTACT SECTION -->
 
         <section class="contact">
+            <h2>Contact Me</h2>
+            <div class="vLine"></div>
             <div class="wrapper">
-                <h2>Contact Me</h2>
-
+                
+                <h3>I'd love to hear from you</h3>
                 <div class="contactForm">
-                    <h3>I love to hear from you</h3>
-                    <form action="">
-                        <input type="text" id="name">
-                        <label for="name" class="visuallyhidden" >Your Name</label>
+                    
+                    <form class="formBody" action="">
+                        <input aria-label="write your name here" type="text" id="name" placeholder="Name">
 
-                        <input type="email" id="email">
-                        <label for="email" class="visuallyhidden">Your Email</label>
+                        <input aria-label="write your email here" type="email" id="email" placeholder="Email">
                         
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea aria-label="write your message here" name="" id="" cols="10" rows="5" style="resize:none" placeholder="Message"></textarea>
 
-                        <button class="contactButton"></button>
+                        <button class="contactButton">Send Message</button>
                     </form>
                 </div> <!-- end of contactForm -->
-
+                    
                 <div class="contactInfo">
                     <ul class="contactList">
-                        <li>Email: bahareh.adham@gmail.com</li>
-                        <li>Phone: (416) 455-6433</li>
+                        <li>bahareh.adham@gmail.com</li>
+                        <li>(416) 455-6433</li>
                         <li>Toronto, Ontario</li>
                     </ul> <!-- end of contactList -->
 
                     <ul class="socialMedia">
-                        <li><a href="https://www.linkedin.com/in/bahareh-adham-239a58153/" target="_blank">
+                        <li aria-label="linked in"><a href="https://www.linkedin.com/in/bahareh-adham-239a58153/" target="_blank">
                             <i class="fab fa-linkedin-in"></i></a>
                         </li>
 
-                        <li><a href="https://twitter.com/BaharehDevs" target="_blank">
+                        <li aria-label="twitter"><a href="https://twitter.com/BaharehDevs" target="_blank">
                             <i class="fab fa-twitter"></i></a>
                         </li>
 
-                        <li><a href="https://medium.com/@baharehadham" target="_blank">
+                        <li aria-label="medium"><a href="https://medium.com/@baharehadham" target="_blank">
                                 <i class="fab fa-medium-m"></i></a>
                         </li>
 
-                        <li><a href="https://www.instagram.com/" target="_blank">
+                        <li aria-label="instagram"><a href="https://www.instagram.com/" target="_blank">
                             <i class="fab fa-instagram"></i></a>
                         </li>
 
@@ -277,6 +268,9 @@
     <!-- FOOTER SECTION -->
 
     <footer>
+
+        <h2>Bahareh Adham</h2>
+        <p>Developer</p>
 
     </footer>
 

@@ -1,0 +1,75 @@
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 70px;
+    h3 {
+        font-family: "Montserrat";
+        margin-top: 10px;
+        font-size: 1.3rem;
+        font-weight: 700;
+        width: 100%;
+    }
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+}
+
+//form section
+
+.contactForm {
+    width: 50%;
+}
+
+.formBody {
+    display: flex;
+    flex-direction: column;
+    input, 
+    textarea {
+        border: none;
+        border-bottom: 1px solid $grey; 
+        padding: 10px;
+        font-family: $bodyFont;
+        &::placeholder {
+            color: $placeholder;
+            font-family: $bodyFont;
+            font-size: 0.7rem;
+        }
+    }
+    button {
+        width: 50%;
+        margin-top: 20px;
+        align-self: flex-end;
+    }
+
+}
+
+
+// info section
+
+.contactInfo {
+    width: calc(50% - 30px);
+    margin-left: 30px;
+}
+
+.contactList {
+    list-style: none;
+    font-weight: 700;
+    font-family: $bodyFont;
+    li {
+        margin-top: 10px;
+    }
+}
+
+.socialMedia {
+    list-style: none;
+    display: flex;
+    a {
+        font-size: 1.5rem;
+        color: black;
+        margin: 10px;
+    }
+}
