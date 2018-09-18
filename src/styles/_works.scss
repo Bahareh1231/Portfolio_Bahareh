@@ -56,48 +56,13 @@
 }
 
 
-
-// yogi B section
-
-.yogiB {
-    justify-content: flex-end;
-    .workPicture {
-        width: 65%;
-    }
-    img {
-        border: solid $lightGrey 70px;
-    }
-    .workName {
-        bottom: 80px;
-        left: -305px;
-    }
-    
-}
-
-// havoc of heroes
-
-.havocOfHeroes {
-    justify-content: flex-start;
-    .workPicture {
-        width: 55%;
-    }
-    img {
-        border: solid $lightGrey 60px;
-    }
-    .workName {
-        top: 54px;
-        right: -306px;
-    }
-}
-
 // Word Scramble
 
 .wordScramble {
     justify-content: flex-end;
-    .workPicture {
-        width: 65%;
-    }
     img {
+        width: 654px;
+        height: auto;
         border: solid $lightGrey 70px;
     }
     .workName {
@@ -107,10 +72,43 @@
     .workSkills {
         transform: rotate(-90deg);
         position: absolute;
-        bottom: 227px;
-        left:-271px;
+        bottom: 217px;
+        left:-195px;
 
     }
+}
+
+
+
+// havoc of heroes
+
+.havocOfHeroes {
+    justify-content: flex-start;
+    img {
+        width: 554px;
+        height: auto;
+        border: solid $lightGrey 60px;
+    }
+    .workName {
+        bottom: -17px;
+        right: -26px;
+    }
+}
+
+// yogi B section
+
+.yogiB {
+    justify-content: flex-end;
+    img {
+        width: 654px;
+        height: auto;
+        border: solid $lightGrey 70px;
+    }
+    .workName {
+        bottom: -17px;
+        left: 117px;
+    }
+    
 }
 
 
@@ -118,21 +116,20 @@
 
 .yogaPoses {
     justify-content: flex-start;
-    .workPicture {
-        width: 50%;
-    }
     img {
-       border: solid $lightGrey 50px; 
+        width: 503px;
+        height: auto;
+        border: solid $lightGrey 50px; 
     }
     .workName {
-        bottom: 56px;
-        right: -206px;
+        bottom: -14px;
+        right: 5px;
     }
     .workSkills {
         transform: rotate(90deg);
         position: absolute;
-        bottom: 406px;
-        right:-379px;
+        bottom: 250px;
+        right:-275px;
     }
 }
 
@@ -141,14 +138,21 @@
 .psd {
     flex-direction: column;
     align-items: flex-end;
-    .workPicture {
-        width: 60%;
-    }
     img {
+        width: 604px;
+        height: auto;
         border: solid $lightGrey 50px;
     }
     .workName {
-        top: 52px;
-        left: -304px;
+        bottom: -14px;
+        left: -24px;
+    }
+}
+
+// MEDIA QUERIES
+
+@media (max-width: 950px) {
+    .workBlock img {
+        width: 100%;
     }
 }

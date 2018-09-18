@@ -1,9 +1,8 @@
 header {
     height: 100vh;
     background-image: url('../../assets/background3.jpg');
-    background-size: 100%;
+    background-size: cover;
     background-attachment: fixed;
-    background-position-y: -20%;
     background-repeat: no-repeat;
 }
 
@@ -13,6 +12,7 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
+        
     }
 
 }
@@ -45,10 +45,75 @@ header {
 .headerNavList {
     display: flex;
     list-style: none;
-    font-size: 0.8rem;
-    font-weight: 700;
-    font-family: $bodyFont;
     width: 50%;
     justify-content: space-between;
+    a {
+        font-size: 0.8rem;
+        font-weight: 700;
+        font-family: $bodyFont;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.hamburgerMenu {
+    display: none;
+    a {
+        color: black;
+    }
+}
+
+// makes the nav stick on the side when scrolling 
+
+.headerNavFixed {
+    position: fixed;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 50vh;
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+
+    }
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            font-size: 1rem;
+            text-align: center;
+        }
+        h3{
+            font-size: 0.7rem;
+            text-align: center;
+        }
+        .hideOnScroll {
+            display: none;
+        }
+    }
+    .headerNavList {
+        text-align: center;
+        height: 100%;
+        padding: 0;
+        margin-bottom: 0;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .hamburgerMenu {
+        margin-top: 20px;
+        display: block;
+    }
+}
+
+.hideNav {
+    display: none;
+}
+
+.showNav {
+    display: flex;
 }
 
