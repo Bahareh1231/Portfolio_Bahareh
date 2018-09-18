@@ -12,6 +12,7 @@
     margin-top: 10px;
     font-size: 1rem;
     font-weight: 400;
+    text-align: center;
     
 }
 
@@ -20,10 +21,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 150px;
-}
-
-.workName {
-    position: absolute;
+    justify-content: center;
 }
 
 .workPicture {
@@ -31,6 +29,7 @@
 }
 
 .workName {
+    position: absolute;
     font-family: $headerFont;
     font-size: 1.9rem;
     font-weight: 200;
@@ -53,27 +52,27 @@
     color: $grey;
     font-size: 0.7rem;
     
+    
 }
 
 
 // Word Scramble
 
 .wordScramble {
-    justify-content: flex-end;
     img {
         width: 654px;
         height: auto;
-        border: solid $lightGrey 70px;
+        border: solid $lightGrey 40px;
     }
     .workName {
-        bottom: -7px;
+        bottom: -20px;
         left: 4px;
     }
     .workSkills {
         transform: rotate(-90deg);
         position: absolute;
-        bottom: 217px;
-        left:-195px;
+        bottom: 93px;
+        left:-111px;
 
     }
 }
@@ -83,30 +82,42 @@
 // havoc of heroes
 
 .havocOfHeroes {
-    justify-content: flex-start;
     img {
-        width: 554px;
+        max-width: 654px;
         height: auto;
-        border: solid $lightGrey 60px;
+        border: solid $lightGrey 40px;
     }
     .workName {
         bottom: -17px;
-        right: -26px;
+        right: 3px;
+    }
+    .workSkills {
+        transform: rotate(-90deg);
+        position: absolute;
+        bottom: 75px;
+        right:-94px;
+
     }
 }
 
 // yogi B section
 
 .yogiB {
-    justify-content: flex-end;
     img {
         width: 654px;
         height: auto;
-        border: solid $lightGrey 70px;
+        border: solid $lightGrey 40px;
     }
     .workName {
         bottom: -17px;
-        left: 117px;
+        left: 5px;
+    }
+    .workSkills {
+        transform: rotate(-90deg);
+        position: absolute;
+        bottom: 74px;
+        left:-88px;
+
     }
     
 }
@@ -115,37 +126,41 @@
 // Yoga Poses
 
 .yogaPoses {
-    justify-content: flex-start;
     img {
-        width: 503px;
+        width: 654px;
         height: auto;
-        border: solid $lightGrey 50px; 
+        border: solid $lightGrey 40px; 
     }
     .workName {
-        bottom: -14px;
+        bottom: -21px;
         right: 5px;
     }
     .workSkills {
         transform: rotate(90deg);
         position: absolute;
-        bottom: 250px;
-        right:-275px;
+        bottom: 160px;
+        right:-182px;
     }
 }
 
 // psd conversion 
 
 .psd {
-    flex-direction: column;
-    align-items: flex-end;
     img {
-        width: 604px;
+        width: 654px;
         height: auto;
-        border: solid $lightGrey 50px;
+        border: solid $lightGrey 40px;
     }
     .workName {
-        bottom: -14px;
-        left: -24px;
+        bottom: -20px;
+        left: -4px;
+    }
+    .workSkills {
+        transform: rotate(-90deg);
+        position: absolute;
+        bottom: 68px;
+        left:-81px;
+
     }
 }
 
@@ -154,5 +169,11 @@
 @media (max-width: 950px) {
     .workBlock img {
         width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .workName {
+        font-size: 1.3rem;
     }
 }
