@@ -16,7 +16,7 @@ app.showNav = () => {
 
         } else {
             $('nav').addClass('headerNav').removeClass('headerNavFixed');
-            $('.headerNavList').removeClass('hideNav');
+            $('.headerNavList').removeClass('hideNav hideNavNoEffect');
 
         }      
     });
@@ -26,7 +26,7 @@ app.showNav = () => {
 app.hamburgerMenu = () => {
     $('.hamburgerMenuLink').on('click', function(e) {
         e.preventDefault();
-        $('.headerNavList').toggleClass('hideNav showNav');
+        $('.headerNavList').toggleClass('hideNav showNav').removeClass('hideNavNoEffect');
         
     })
 }
@@ -53,11 +53,34 @@ app.goToLink = () => {
     })
 }
 
+// functions dealing with the work overlay 
+
+app.showWorkOverlay = () => {
+    $('.workImage').on('click', function(e){
+        e.preventDefault();
+        let $target = $(event.target).parent().parent();
+        
+        $target.find('.workOverlay').addClass('showWorkOverlay'); // show overlay
+
+    })
+}
+
+app.hideWorkOverlay = () => {
+    $('.closeWorkOverlay').on('click', function(e){
+        e.preventDefault();
+        let $target = $(event.target).parent().parent();
+        $target.find('.workOverlay').removeClass('showWorkOverlay');
+        
+    })
+}
+
 app.init = () => {
     app.showNav();
     app.hamburgerMenu();
     app.hamburgerMenu2();
     app.closeOverlay();
+    app.showWorkOverlay();
+    app.hideWorkOverlay();
     app.goToLink();
 }
 

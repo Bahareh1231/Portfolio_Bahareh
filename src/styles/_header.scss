@@ -132,7 +132,7 @@ header {
 
 .hideNavNoEffect {
     opacity: 0;
-    transform: none;
+    transition: none;
     &:hover li {
         cursor: default;
     }
@@ -194,18 +194,15 @@ header {
 
 // mobile portrait
 
-@media (max-width: 500px) {
+@media (max-width: 750px) {
     .headerNav {
-        // position: fixed;
-        // background: white;
-        // width: 100%;
-        // z-index: 99;
         .wrapper {
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: center;
         }
     }
     .logo {
+        text-align: center;
         h1 {
             text-align: center;
             font-size: 1.8rem;

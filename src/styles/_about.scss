@@ -19,7 +19,7 @@
     p {
         line-height: 30px;
         font-family: $bodyFont;
-        font-size: 1rem;
+        font-size: 0.8rem;
         text-align: left;
     }
     h3 {
@@ -36,14 +36,26 @@
 
 .aboutPicture {
     width: 40%;
-
 }
 
 .resume {
     width: 100%;
     text-align: center;
     margin-top: 10px;
+    a{
+        font-size: 0.7rem;
+        text-align: center;
+        font-family: $bodyFont;
+        color: black;
+        text-decoration: none;
+        margin-top: 10px;
+    }
 }
+
+.noUppercase {
+    text-transform: none
+}
+
 
 // logo section
 
@@ -75,14 +87,16 @@
 
 @media (max-width: 1200px) {
     .aboutPicture {
-        width: 45%;
+        width: 50%;
     }
-
     .skillsIcons {
         font-size:1.3rem;
     }
     .firebaseLogo {
         height: 25px;
+    }
+    .resume {
+        display: none;
     }
 }
 
@@ -111,5 +125,8 @@
     .aboutText {
         order: 2;
         width: 80%;
+        p {
+            text-align: center;
+        }
     }
 }

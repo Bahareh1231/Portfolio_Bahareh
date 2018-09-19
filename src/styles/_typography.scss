@@ -29,7 +29,10 @@ h2 {
     margin-bottom: 50px;
 }
 
-button {
+button,
+.blogButton,
+.blogButton2,
+.resumeButton {
     font-family: $bodyFont;
     font-size: 0.7rem;
     padding: 10px 30px;

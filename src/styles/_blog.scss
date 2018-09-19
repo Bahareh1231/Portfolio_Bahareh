@@ -19,10 +19,16 @@
     flex-direction: column;
     justify-content: space-around;
     h3 {
+        margin: 0;
+        border-bottom: 2px solid black;
+        display: inline;
+    }
+    a {
         font-family: $bodyFont;
         font-size: 1.4rem;
-        text-decoration: underline;
-        margin-bottom: 0;
+        text-decoration: none;
+        color: black;
+    
     }
     p {
         font-size: 1rem;
@@ -32,11 +38,25 @@
     }
 }
 
-.blogButton {
+a.blogButton {
     width: 50%;
     align-self: center;
     margin-top: 20px;
+    font-size: 0.7rem;
+    text-align: center;
 }
+
+a.blogButton2 {
+    display: none;
+    font-size: 0.7rem;
+    text-align: center;
+    font-family: $bodyFont;
+    color: black;
+    text-decoration: none;
+}
+
+
+// MEDIA QUERIES
 
 @media (max-width: 960px) {
     .blog .wrapper {
@@ -45,15 +65,30 @@
     }
     .blogPicture {
         width: 60%;
+        order: 2;
+    }
+    .blogText {
+        order: 1;
+        h3 {
+            text-align: center;
+        }
+    }
+   a.blogButton {
+        display: none;
+    }
+
+    a.blogButton2 {
+        margin-top: 20px;
+        display: block;
+        order: 3;
     }
 }
 
-@media (max-width: 500px) {
-    .blogText h3 {
+@media (max-width: 750px) {
+    .blogText {
+        h3 {
         font-size: 1rem;
+        }
     }
 
-    .blogButton {
-        width: 100%;
-    }
 }
