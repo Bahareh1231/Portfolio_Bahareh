@@ -58,18 +58,28 @@ app.goToLink = () => {
 app.showWorkOverlay = () => {
     $('.workImage').on('click', function(e){
         e.preventDefault();
-        let $target = $(event.target).parent().parent();
+        let $target = $(this).parent().parent();
         
         $target.find('.workOverlay').addClass('showWorkOverlay'); // show overlay
 
     })
 }
 
+app.showWorkOverlayFromTitle = () => {
+    $('.workName a').on('click', function(e){
+        e.preventDefault();
+        let $target = $(this).parent().parent();
+        $target.find('.workOverlay').addClass('showWorkOverlay'); // show overlay
+        
+    })
+}
+
 app.hideWorkOverlay = () => {
     $('.closeWorkOverlay').on('click', function(e){
         e.preventDefault();
-        let $target = $(event.target).parent().parent();
-        $target.find('.workOverlay').removeClass('showWorkOverlay');
+        let $target = $(this).parent();
+        $target.removeClass('showWorkOverlay'); // hide overlay
+        
         
     })
 }
@@ -81,6 +91,7 @@ app.init = () => {
     app.closeOverlay();
     app.showWorkOverlay();
     app.hideWorkOverlay();
+    app.showWorkOverlayFromTitle();
     app.goToLink();
 }
 
