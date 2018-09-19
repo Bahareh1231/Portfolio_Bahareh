@@ -48,6 +48,7 @@ header {
     list-style: none;
     width: 50%;
     justify-content: space-between;
+    padding: 0;
     a {
         font-size: 0.8rem;
         font-weight: 700;
@@ -111,7 +112,6 @@ header {
         margin-bottom: 0;
         flex-direction: column;
         justify-content: space-between;
-        opacity: 0;
     }
     .hamburgerMenu {
         margin-top: 20px;
@@ -119,10 +119,20 @@ header {
     }
 }
 
+
+
 .hideNav {
     opacity: 0;
     transform: translateY(170px);
     transition: all 1.2s;
+    &:hover li {
+        cursor: default;
+    }
+}
+
+.hideNavNoEffect {
+    opacity: 0;
+    transform: none;
     &:hover li {
         cursor: default;
     }

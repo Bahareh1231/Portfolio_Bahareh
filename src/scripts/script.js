@@ -11,7 +11,7 @@ app.showNav = () => {
         
         if (wS > hT && width > 500) {
             $('nav').removeClass('headerNav').addClass('headerNavFixed');
-            $('.headerNavList').addClass('hideNav')
+            $('.headerNavList').addClass('hideNavNoEffect hideNav')
             
 
         } else {

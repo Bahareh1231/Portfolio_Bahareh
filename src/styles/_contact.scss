@@ -6,10 +6,11 @@
     padding-bottom: 70px;
     h3 {
         font-family: "Montserrat";
+        color: #888888;
         margin-top: 10px;
-        font-size: 1.3rem;
-        font-weight: 700;
-        width: 100%;
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: center;
     }
     .wrapper {
         display: flex;
@@ -53,6 +54,10 @@
 .contactInfo {
     width: calc(50% - 30px);
     margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -109,5 +114,8 @@
     }
     .formBody button {
         align-self: center;
+    }
+    .contact .wrapper h3 {
+        display: none;
     }
 }
