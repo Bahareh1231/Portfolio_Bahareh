@@ -16,7 +16,7 @@ app.showNav = () => {
 
         } else {
             $('nav').addClass('headerNav').removeClass('headerNavFixed');
-            $('.headerNavList').removeClass('hideNav hideNavNoEffect');
+            $('.headerNavList').removeClass('hideNav hideNavNoEffect showNav');
 
         }      
     });
