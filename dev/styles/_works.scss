@@ -103,7 +103,8 @@
 
 // yogi B section
 
-.yogiB {
+.yogiB,
+.sarah {
     img {
         width: 654px;
         height: auto;
@@ -121,6 +122,10 @@
 
     }
     
+}
+
+.yogiB {
+    display: none;
 }
 
 
