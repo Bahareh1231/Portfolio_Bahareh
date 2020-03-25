@@ -21,12 +21,24 @@ h2 {
     margin-bottom: 30px;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
 .vLine {
     width: 50%;
     border-right: 1px solid $grey;
     height: 100px;
     align-self: flex-start;
     margin-bottom: 50px;
+}
+
+a {
+    transition: all 0.5s;
+    &:focus {
+        outline: none;
+    }
 }
 
 button,

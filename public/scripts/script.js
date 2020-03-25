@@ -1,126 +1,134 @@
 "use strict";
 
-(function () {
-  function r(e, n, t) {
-    function o(i, f) {
-      if (!n[i]) {
-        if (!e[i]) {
-          var c = "function" == typeof require && require;
-          if (!f && c) return c(i, !0);
-          if (u) return u(i, !0);
-          var a = new Error("Cannot find module '" + i + "'");
-          throw a.code = "MODULE_NOT_FOUND", a;
-        }
+var counter = 0;
+var scrolling = false;
+var previousScroll = 0;
+"use strict"; //smooth scrolling
 
-        var p = n[i] = {
-          exports: {}
-        };
-        e[i][0].call(p.exports, function (r) {
-          var n = e[i][1][r];
-          return o(n || r);
-        }, p, p.exports, r, e, n, t);
-      }
 
-      return n[i].exports;
+$('a[href*="#"]').on('click', function (e) {
+  e.preventDefault();
+  $('body').removeClass('noScroll');
+  $('html, body').animate({
+    scrollTop: $($(this).attr('href')).offset().top - 100
+  }, 'swing');
+  $('.navOverlay').removeClass('showNavOverlay');
+  setTimeout(function () {
+    $('.navOverlay').addClass('hideNavOverlay');
+  }, 300);
+  $('header').removeClass('overflow');
+});
+var app = {}; // make side nav appear once the header is out of view
+// load header image in 0.5 seconds
+// SCROLLING EVENTS
+// scroll event 
+
+app.scrollingEvent = function () {
+  $(window).scroll(function () {
+    scrolling = true;
+  });
+}; // run functions that have to do with scrolling
+
+
+app.scrollEffects = function () {
+  setInterval(function () {
+    if (scrolling = true) {
+      scrolling = false;
+      app.desktopHeader();
+    } // end of if scrolling
+
+  }, 250); // end of interval
+};
+
+app.desktopHeader = function () {
+  var headerTop = $("header").offset().top;
+  var headerBottom = $("header").offset().top + $("header").outerHeight();
+  var screenBottom = $(window).scrollTop() + window.innerHeight;
+  var screenTop = $(window).scrollTop();
+  var currentScroll = $(window).scrollTop(); //scrolling up 
+
+  if (currentScroll < previousScroll) {
+    //scrolling up and not at the top of the screen
+    if (screenTop > 100) {
+      $('.headerNav').removeClass('hideHeaderMenu').addClass('menuDesktopScroll');
+    } // at the top of screen
+
+
+    if (screenTop < 99) {
+      $('.headerNav').removeClass('menuDesktopScroll hideHeaderMenu');
     }
+  } //scrolling down 
 
-    for (var u = "function" == typeof require && require, i = 0; i < t.length; i++) {
-      o(t[i]);
+
+  if (currentScroll > previousScroll) {
+    // not at the top of the screen
+    if (screenTop > 100) {
+      $('.headerNav').addClass('hideHeaderMenu');
+    } // at the top of the screen
+
+
+    if (screenTop < 99) {
+      $('.headerNav').removeClass('menuDesktopScroll hideHeaderMenu');
     }
-
-    return o;
-  }
-
-  return r;
-})()({
-  1: [function (require, module, exports) {
-    "use strict";
-
-    var app = {}; // make side nav appear once the header is out of view
-
-    app.showNav = function () {
-      $(window).scroll(function () {
-        var wS = $(this).scrollTop();
-        var hT = $('#work').offset().top;
-        var width = $(window).width();
-
-        if (wS > hT && width > 500) {
-          $('nav').removeClass('headerNav').addClass('headerNavFixed');
-          $('.headerNavList').addClass('hideNavNoEffect hideNav');
-        } else {
-          $('nav').addClass('headerNav').removeClass('headerNavFixed');
-          $('.headerNavList').removeClass('hideNav hideNavNoEffect showNav');
-        }
-      });
-    }; // hamburger menu in nav
+  } // end of scrolling down
 
 
-    app.hamburgerMenu = function () {
-      $('.hamburgerMenuLink').on('click', function (e) {
-        e.preventDefault();
-        $('.headerNavList').toggleClass('hideNav showNav').removeClass('hideNavNoEffect');
-      });
-    };
+  previousScroll = currentScroll;
+};
 
-    app.hamburgerMenu2 = function () {
-      $('.hamburgerMenuLink2').on('click', function (e) {
-        e.preventDefault();
-        $('.navOverlay').toggleClass('hideNavOverlay showNavOverlay');
-      });
-    };
+app.loadHeader = function () {
+  var imageUrl = '../assets/background3.jpg';
+  var defaultImageUrl = '../../assets/background3small.jpg';
+  $.when($("header").css("background-image", 'url(' + imageUrl + '), url(' + defaultImageUrl + ')')).done($("header").fadeIn(10000));
+};
 
-    app.closeOverlay = function () {
-      $('.closeOverlay').on('click', function (e) {
-        e.preventDefault();
-        $('.navOverlay').addClass('hideNavOverlay').removeClass('showNavOverlay');
-      });
-    };
+app.hamburgerMenu2 = function () {
+  $('.hamburgerMenuLink2').on('click', function (e) {
+    e.preventDefault();
+    $('.navOverlay').removeClass('hideNavOverlay');
+    setTimeout(function () {
+      $('.navOverlay').addClass('showNavOverlay');
+    }, 300);
+  });
+};
 
-    app.goToLink = function () {
-      $('.navItem').on('click', function () {
-        $('.navOverlay').removeClass('showNavOverlay').addClass('hideNavOverlay');
-      });
-    }; // functions dealing with the work overlay 
+app.closeOverlay = function () {
+  $('.closeOverlay').on('click', function (e) {
+    e.preventDefault();
+    $('.navOverlay').removeClass('showNavOverlay');
+    setTimeout(function () {
+      $('.navOverlay').addClass('hideNavOverlay');
+    }, 300);
+  });
+};
 
+app.showWorkOverlay = function () {
+  $('.workImage').on('click', function (e) {
+    e.preventDefault();
+    var $target = $(this).parent().parent();
+    $target.find('.workOverlay').addClass('showWorkOverlay'); // show overlay
+  });
+};
 
-    app.showWorkOverlay = function () {
-      $('.workImage').on('click', function (e) {
-        e.preventDefault();
-        var $target = $(this).parent().parent();
-        $target.find('.workOverlay').addClass('showWorkOverlay'); // show overlay
-      });
-    };
+app.hideWorkOverlay = function () {
+  $('.closeWorkOverlay').on('click', function (e) {
+    e.preventDefault();
+    var $target = $(this).parent();
+    $target.removeClass('showWorkOverlay'); // hide overlay
+  });
+};
 
-    app.showWorkOverlayFromTitle = function () {
-      $('.workName a').on('click', function (e) {
-        e.preventDefault();
-        var $target = $(this).parent().parent();
-        $target.find('.workOverlay').addClass('showWorkOverlay'); // show overlay
-      });
-    };
+app.init = function () {
+  app.loadHeader();
+  app.hamburgerMenu2();
+  app.closeOverlay();
+  app.showWorkOverlay();
+  app.hideWorkOverlay();
+  app.scrollEffects();
+  app.scrollingEvent();
+};
 
-    app.hideWorkOverlay = function () {
-      $('.closeWorkOverlay').on('click', function (e) {
-        e.preventDefault();
-        var $target = $(this).parent();
-        $target.removeClass('showWorkOverlay'); // hide overlay
-      });
-    };
-
-    app.init = function () {
-      app.showNav();
-      app.hamburgerMenu();
-      app.hamburgerMenu2();
-      app.closeOverlay();
-      app.showWorkOverlay();
-      app.hideWorkOverlay();
-      app.showWorkOverlayFromTitle();
-      app.goToLink();
-    };
-
-    $(function () {
-      AOS.init();
-      app.init();
-    });
-  }, {}]
-}, {}, [1]);
+$(function () {
+  AOS.init();
+  app.init();
+});

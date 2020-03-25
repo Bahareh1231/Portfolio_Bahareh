@@ -33,7 +33,6 @@ function style() {
         // Initialize sourcemaps before compilation starts
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(browserSync.stream())
         .on('error', notify.onError({
             message: "Error: <%= error.message %>",
             title: 'Error in CSS 💩'
@@ -43,7 +42,7 @@ function style() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.styles.dest))
         // Add browsersync stream pipe after compilation
-        // .pipe(browserSync.stream());
+        .pipe(browserSync.stream());
 }
 
 function html() {

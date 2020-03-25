@@ -9,3 +9,18 @@ $grey: #888888;
 $lightGrey: #eeeeee;
 $pink: rgb(255, 101, 126);
 $placeholder: #cccccc;
+
+//mixings
+@mixin position($position, $top, $right, $bottom, $left) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin display($display, $jc, $ai) {
+    display: $display;
+    justify-content: $jc;
+    align-items: $ai;
+}
