@@ -120,7 +120,9 @@ header {
     transform: translateY(-170px);
 }
 
-
+.showNavOverlay {
+    display: none;
+}
 
 .navOverlay {
     transition: all 0.5s;
@@ -168,17 +170,7 @@ header {
     }
 }
 
-.showNavOverlay {
-    opacity: 1;
-    transform: translateX(0);
-}
 
-.hideNavOverlay {
-    display: none;
-
-}
-
-.showNav
 
 // .overlayList 
 
@@ -188,7 +180,7 @@ header {
     width: 24px;
     position: absolute;
     transition: all 0.5s;
-    right: 31px;
+    right: 30px;
     top: 7vw;
     @include display(flex, center, center);
     flex-direction: column;
@@ -257,6 +249,16 @@ header {
     .hamburgerMenu2 {
         display: flex;
         margin: 0;
+    }
+
+    .showNavOverlay {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .hideNavOverlay {
+        display: none;
+
     }
 
     .headerNavFixed {
